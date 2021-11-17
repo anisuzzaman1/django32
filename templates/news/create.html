@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block myCode %}
+    <h1>Django Input Form </h1>
+    {% if not created %}
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Create News </button>
+    </form>
+    {% else %}
+    <p>Your News is created. </p>
+    <a href="/news/{{ object.id }}"> 
+        {{ object.title }} </br> {{ object.content }}
+    </a>
+    {% endif %}
+    
+{% endblock myCode %}
