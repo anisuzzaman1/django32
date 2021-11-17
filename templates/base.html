@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is my django project</title>
+    </head>
+    <body>
+        <h1>This is my django project</h1>
+        <form action="/news/" method="GET">
+            <input type="text" name="q" />
+            <input type="submit" />
+        </form>                
+        {% block myCode %}
+        {% endblock myCode %}
+    </body> 
+</html>

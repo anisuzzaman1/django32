@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block myCode %}
+    <h1>Django Input Form </h1>
+    <form method="post" action=".">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="title" placeholder="Title" /> 
+        </div>
+        <div style="margin-top:10px;">
+            <textarea name="content" placeholder="New Content Here"> </textarea>
+        </div>
+        <button type="submit"> Create News </button>
+    </form>
+    <p>Your News is created. </p>
+    <a href="/news/{{ object.id }}"> 
+        {{ object.title }} - {{ object.content }}
+    </a>
+
+{% endblock myCode %}
